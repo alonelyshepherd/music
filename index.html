@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>自然大调音阶标尺</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <section class="topbar" aria-label="音阶控制">
+        <div>
+          <h1>自然大调音阶标尺</h1>
+          <p>拖动下方标尺，或直接选择主音，观察全全半全全全半如何落在十二个半音上。</p>
+        </div>
+        <div class="controls">
+          <label class="field">
+            <span>主音</span>
+            <select id="tonicSelect" aria-label="选择主音"></select>
+          </label>
+          <div class="segmented" aria-label="音名显示方式">
+            <button id="sharpMode" class="active" type="button">升号</button>
+            <button id="flatMode" type="button">降号</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="instrument" aria-label="十二平均律音名与大调标尺">
+        <div class="scroll-shell" id="scrollShell">
+          <div class="keyboard" id="keyboard" aria-label="等宽钢琴音名带"></div>
+          <div class="ruler-lane">
+            <div class="ruler" id="ruler" tabindex="0" role="slider" aria-label="自然大调音程标尺"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="result" aria-live="polite">
+        <div>
+          <span class="caption">当前音阶</span>
+          <strong id="scaleTitle">C 自然大调</strong>
+        </div>
+        <ol id="scaleList" class="scale-list"></ol>
+      </section>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
